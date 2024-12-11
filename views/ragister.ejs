@@ -1,0 +1,83 @@
+<%-include('./header.ejs')%>
+
+    <!-- Register Here -->
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+               
+
+
+
+                <!-- Column-2 -->
+                <center>
+                <div class="col-lg-12 bglogin p-4">
+                    <!-- Heading (Register Here) -->
+                    <h1 class="mb-5 text-center">Register Here</h1>
+                    <% if(message.length> 0){ %>
+                        <div class="alert alert-danger">
+                            <%= message %>
+                        </div>
+                        
+                        <% } %>
+
+                            <form action="/adminragister" method="post">
+
+                                <!-- User Name -->
+                                <div class="row mb-8">
+                                    <div
+                                        class="col-lg-2 text-center bg-secondary rounded text-light fw-light my-auto p-2">
+                                        User Name</div>
+                                    <div class="col-lg-10">
+                                        <input class="form-control text-capitalize" type="text" name="name"
+                                            placeholder="Enter your name">
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="row mb-3">
+                                    <div
+                                        class="col-lg-2 text-center bg-secondary rounded text-light fw-light my-auto p-2">
+                                        Email</div>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" name="email" type="email"
+                                            placeholder="name@example.com">
+                                    </div>
+                                </div>
+
+                                <!-- Password -->
+                                <div class="row mb-4">
+                                    <div
+                                        class="col-lg-2 text-center bg-secondary rounded text-light fw-light my-auto p-2">
+                                        Password</div>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" name="password" type="password">
+                                    </div>
+                                </div>
+
+                                <!-- Confirm Password -->
+                                <div class="row mb-4">
+                                    <div
+                                        class="col-lg-3 text-center bg-secondary rounded text-light fw-light my-auto p-2">
+                                        Confirm Password</div>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" name="confirmpassword" type="password">
+                                    </div>
+                                </div>
+
+                                <!-- Button (Login) -->
+                                <center>
+                                    <button class="btn btn-primary mb-5 btn-lg">Register</button>
+                                </center>
+                                
+
+                            </form>
+                </div>
+            </center>
+                <!-- End Column-2 -->
+            </div>
+        </div>
+    </section>
+    <!-- End Register Here -->
+
+
+    <%-include('./footer.ejs')%>

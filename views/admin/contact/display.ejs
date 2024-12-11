@@ -1,0 +1,111 @@
+<%- include('../../header.ejs')%>
+
+<!-- dashboard blog start -->
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard" class="active mt-5">Dashboard</a></li>
+                            <li><a href="/admin/displayblog">Blogs</a></li>
+                            <li><a href="/admin/categoriedisplay">Categories</a></li>
+                            <li><a href="/admin/contactdisplay">Contact</a></li>
+                            <li><a href="/admin/aboutdisplay">About</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class=" mt-5 gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Add Contact details
+                              </button>
+                        </div>
+                       <br>
+                        <table  class="table table-bordered">
+                           <tbody>
+                              <tr class="table-primary">
+                               
+                                <th scope="col">Id No.</th>
+                                <th scope="col">Name</th>
+                               <th scope="col">E-mail</th>
+                               <th scope="col">Phone-No.</th>
+                               <th scope="col">Message</th>
+                               <th scope="col">Action</th>
+                              </tr>
+                              <% d.forEach((item)=>{ %>
+                                <tr>
+                                  
+                                  <td><%= item._id %></td>
+                                  <td><%= item.name %></td>
+                                  <td><%= item.email %></td>
+                                  <td><%= item.phone %></td>
+                                  <td><%= item.message %></td>
+                                  
+                                  <td>
+                                    <a href="/contactview/<%= item._id %>" class="btn btn-success"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="/contactedit/<%= item._id %>" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
+                                    <a href="/contactdelete/<%= item._id %>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                  </td>
+  
+                                </tr>
+
+                             <% }) %>
+                            
+                           
+                              
+                             
+                             
+                            </tbody>
+                          </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- dashboard blog end -->
+
+<!-- model blog creat -->
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Blog</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="/insertcontact" method="post">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control mt-3" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="email" class="form-control mt-3" placeholder="E-Mail" required>
+                </div>
+                <div class="form-group">
+                  <input type="number" name="phone" class="form-control mt-3" placeholder="Phone" required>
+                </div>
+                <div class="form-group">
+                  <textarea name="message" rows="5" class="form-control mt-3" placeholder="Message"></textarea>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-success mt-5">Send Message</button>
+                </div>
+              </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <!-- model blog end -->
+
+
+
+<%- include('../../footer.ejs')%>

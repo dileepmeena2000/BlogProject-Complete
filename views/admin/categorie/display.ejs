@@ -1,0 +1,100 @@
+<%- include('../../header.ejs')%>
+
+<!-- dashboard blog start -->
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                      <ul>
+                        <li class="active"><a href="/admin/dashboard" class="active mt-5">Dashboard</a></li>
+                        <li><a href="/admin/displayblog">Blogs</a></li>
+                        <li><a href="/admin/categoriedisplay">Categories</a></li>
+                        <li><a href="/admin/contactdisplay">Contact</a></li>
+                        <li><a href="/admin/aboutdisplay">About</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class=" mt-5 gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Add Categories
+                              </button>
+                        </div>
+                       <br>
+                        <table  class="table table-bordered">
+                           <tbody>
+                              <tr class="table-primary">
+                               
+                                <th scope="col">Id No.</th>
+                                <th scope="col">Categorie Name</th>
+                               <th scope="col">Action</th>
+                              </tr>
+                              
+                                <% d.forEach((item) => { %>
+                                <tr>
+                                  
+                                  <td><%= item._id %></td>
+                                  <td><%= item.cat_name %></td>
+                                  
+                                 
+                                  <td>
+                                    <a href="/categoryview/<%= item._id %>" class="btn btn-success"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="/categoryedit/<%= item._id %>" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
+                                    <a href="/categorydelete/<%= item._id %>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                  </td>
+  
+                                </tr>
+
+                              <% }); %>
+
+                           
+                              
+                             
+                             
+                            </tbody>
+                          </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- dashboard blog end -->
+
+<!-- model blog creat -->
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Blog</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/insertcategory" method="post" enctype="multipart/form-data">
+            <div class="col-md-3">
+                <label for="">cat_name</label>
+                <input type="text" name="cat_name" class="form-control">
+            </div>
+           
+              
+            <br>
+            <button type="submit" class="btn btn-primary"> Submit</button>
+          </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <!-- model blog end -->
+
+
+
+<%- include('../../footer.ejs')%>

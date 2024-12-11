@@ -1,0 +1,72 @@
+<%- include('./header.ejs')%>
+
+<!--login from start-->
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6"  style="background-color: floralwhite;">
+                <div class="login-box">
+                    <h1 class="sec1">Admin Login</h1>
+                    <% if(message.length> 0){ %>
+                        <div class="alert alert-danger">
+                            <%= message %>
+                        </div>
+                        <% } %>
+                    
+                    <form action="/adminlogin" method="post">
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control mt-3" placeholder="useremail" >
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control mt-3" placeholder="Password" >
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary mt-3" >
+                            <a href="/ragister" class="text-danger mt-5">Register Here</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#Forgot"
+                            >Forgot Password</a
+                          >
+                        </div>
+                    </form>
+                    
+                </div>         
+            </div>
+        </div>
+    </div>
+</section>
+<!--login from end-->
+
+<!--Forgot Password -->
+<div class="modal fade" id="Forgot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Forget Password</h1>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form action="/forgot_Password" method="post">
+
+
+                    <div class="mb-3">
+                        <label for="">Email</label>
+                        <input type="text" name="email" class="form-control">
+                    </div>
+
+
+
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    
+    
+
+
+<%- include('./footer.ejs')%>

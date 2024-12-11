@@ -1,0 +1,45 @@
+<%- include('../../header.ejs')%>
+
+    <!-- dashboard blog start -->
+    <section class="dashboard-wrap mtb-40">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="dash-left">
+                            <ul>
+                                <li class="active"><a href="/admin/dashboard" class="active mt-5">Dashboard</a></li>
+                                <li><a href="/admin/displayblog">Blogs</a></li>
+                                <li><a href="/admin/categoriedisplay">Categories</a></li>
+                                <li><a href="/admin/contactdisplay">Contact</a></li>
+                                <li><a href="/admin/aboutdisplay">About</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="dash-right">
+                            <br>
+                            <h1>Categories Update</h1>
+                            <form action="/categoryupdate/<%= edit._id %>" method="post" enctype="multipart/form-data">
+                                <div class="col-md-3">
+                                    <label for="">cat_name</label>
+                                    <input type="text" name="cat_name" class="form-control">
+                                </div>
+                               <br>
+                                <button type="submit" class="btn btn-primary bg-blue-500"> Update</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- dashboard blog end -->
+
+
+
+
+
+
+    <%- include('../../footer.ejs')%>

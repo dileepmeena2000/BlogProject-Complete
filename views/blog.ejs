@@ -1,0 +1,29 @@
+<%- include('./header.ejs')%>
+
+<!-- blog start -->
+<section class="blog-list mtb-40">
+    <div class="container">
+      <h1 class="mt-5">Blogs</h1>
+      <div class="row">
+        <% b.forEach((item)=>{ %>
+          <div class="col-md-4">
+              <div class="blog-box">
+                  <img src="<%= item.image.url %>"alt="">
+                  <h3>"<%= item.title %>"</h3>
+                  
+                  <p>"<%= item.description.slice(0,100)%>" </p>
+                  
+                  <a href="/details/<%= item._id %>" class="btn btn-danger">Read more...</a>
+                 
+              </div>
+             
+          </div>
+
+     <% })%>
+       
+      </div>
+    </div>
+  </section>
+<!-- blog end -->
+
+<%- include('./footer.ejs')%>

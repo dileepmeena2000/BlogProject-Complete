@@ -1,0 +1,131 @@
+
+
+
+::placeholder{
+    color: gray !important;
+    font-weight: lighter;
+}
+
+label{
+    padding-top: 10% !important;
+}
+
+/* button{
+    background: #2a1a6f !important;
+} */
+
+/* ---------------------------------------------------------------
+                            #navbar
+------------------------------------------------------------------ */
+
+#navbar nav{
+    background: #f1efef !important;
+}
+
+.webViewPosition{
+    text-align: start !important;
+}
+
+.bglogin{
+    background: #f7f0bd;
+}
+
+/* ---------------------------------------------------------------
+                            #footer
+------------------------------------------------------------------ */
+
+#footer
+{
+    background: #2a1a6f;
+}
+
+#social{
+    background: white;
+}
+
+#detail p{
+    text-align: justify;
+}
+
+/* ---------------------------------------------------------------
+                            About
+------------------------------------------------------------------ */
+
+.page-title-area {
+    position: relative;
+    z-index: 1;
+}
+
+.paddingValue label
+{
+    padding: 0 !important;
+}
+
+/* ---------------------------------------------------------------
+                            Media Query
+------------------------------------------------------------------ */
+
+@media (max-width:992px) {
+    #navbarsExample11{
+        justify-content: center !important;
+    }
+
+    .mobileViewButton{
+        background: white !important;
+        margin-bottom: 2rem;
+    }
+}
+/* about */
+.section{
+    margin-bottom: 210px;
+}
+.sec1{
+    margin-top: 120px;
+    font-size: 35px;
+}
+/* about section end */
+
+
+footer{
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
+.blog-box {text-align: center; margin-bottom: 20px;}
+.blog-box h3 { margin:20px 0; font-size:22px; color:#000;}
+.blog-box p { color:#666; }
+.blog-box span, .posted-on span { font-style: italic; color:#000; }
+.blog-box img { width:100%; }
+.mtb-40 { margin:40px 0; min-height:450px;}
+
+
+.blog-right h3 {background-color:#000;color: #fff; padding:5px 15px;font-size:20px;}
+.detail-img {margin:40px 0px;}
+.rb-box-img { margin-right:15px; }
+.rb-box-img img { width:100px;}
+.rb-box {display: flex;}
+.rb-box-desc h4 {font-size:20px;color:#000;font-weight: 600;}
+.rb-box-desc p {color:#666;}
+.rb-box {margin-bottom:10px;}
+.recent-post a:hover {text-decoration: none;}
+.recent-post a:hover h4 {color:#007EDB;}
+
+
+
+.login-box {padding:20px;margin-top:2%;}
+.login-box h1 {font-size:24px;text-align: center;margin-bottom: 20px}
+.dash-left ul {padding:0;margin:0;list-style:none;}
+.dash-left ul li { background-color: #f1f1f1; margin-bottom:5px;}
+.dash-left ul li a {color:#333; padding:5px 15px; display: block;}
+.dash-left ul li:hover a {background-color:#007EDB; text-decoration: none; color:#fff;}
+.dash-left ul li a.active {background-color:#007EDB; color:#fff;}
+.dash-header {display:flex; justify-content: space-between;}
+.table img { width:80px; }
+.action a {margin:0 5px;}
+
+footer {background-color: #000;color:#fff; padding:20px;}
+
+
+@media (max-width: 767px) {
+	.intro-text {display: none;}
+}

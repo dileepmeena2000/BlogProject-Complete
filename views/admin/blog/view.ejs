@@ -1,0 +1,60 @@
+<%- include('../../header.ejs')%>
+
+<!-- dashboard blog start -->
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard" class="active mt-5">Dashboard</a></li>
+                            <li><a href="/admin/displayblog">Blogs</a></li>
+                            <li><a href="/admin/categoriedisplay">Categories</a></li>
+                            <li><a href="/admin/contactdisplay">Contact</a></li>
+                            <li><a href="/admin/aboutdisplay">About</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                       <h1>View Blog</h1>
+                       <br>
+                        <table  class="table table-bordered">
+                           <tbody>
+                              <tr class="table-primary">
+                               
+                                <th scope="col">Id No.</th>
+                                <th scope="col">Tittle</th>
+                               <th scope="col">Description</th>
+                               <th scope="col">Image</th>
+                              
+                              </tr>
+                             
+                                <tr>
+                                  
+                                  <td><%= view._id %></td>
+                                  <td><%= view.title %></td>
+                                  <td><%= view.description %></td>
+                                  <td><img src="<%= view.image.url %>" ></td>
+                                 
+  
+                                </tr>
+                            
+                            </tbody>
+                          </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- dashboard blog end -->
+
+
+  
+  
+
+
+<%- include('../../footer.ejs')%>
