@@ -1,13 +1,15 @@
 const mongoose =require('mongoose')
+const local_url = 'mongodb://127.0.0.1:27017/blogProject'
+const live_url = 'mongodb+srv://dileepmeena975:YOy8hoEK1SOXHzVO@cluster0.zcooc.mongodb.net/blogProject'
 
 
 const connectDb = () =>{
 
-    return mongoose.connect('mongodb://127.0.0.1:27017/blogprojject')
+    return mongoose.connect(live_url)
 
 .then(()=>{
 
-    console.log('connect DB')
+    console.log('connect db')
 
 })
 .catch((error)=>{
